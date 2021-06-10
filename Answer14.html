@@ -9,46 +9,52 @@
 <body>
 
     <form>
-        Tennis: <input type="checkbox" onchange="chkBoxVal();" value="Tennis" name="chk" id="chk1">
-        FootBall: <input type="checkbox" name="chk" id="chk2" value="FootBall">
-        ShotPut: <input type="checkbox" name="chk" id="chk3" value="ShotPut">
-        HighJump: <input type="checkbox" name="chk" id="chk4" value="HighJump">
-        Race: <input type="checkbox" name="chk" id="chk5" value="Race"><br />
+        Tennis: <input type="checkbox" class="chk" onchange="checkAll();" value="Tennis" name="chk" id="chk1">
+        FootBall: <input type="checkbox" class="chk" onchange="checkChange();" id="chk2" value="FootBall">
+        ShotPut: <input type="checkbox" class="chk" onchange="checkChange();" id="chk3" value="ShotPut">
+        HighJump: <input type="checkbox" class="chk" onchange="checkChange();" id="chk4" value="HighJump">
+        Race: <input type="checkbox" class="chk" onchange="checkChange();" id="chk5" value="Race"><br />
          <input type="text" id="txt" /> 
 
     </form>
 
     <script>
 
-        
+    var box = document.getElementById("txt");
 
-        function chkBoxVal() {
-            var box = document.getElementById("txt");
-
-            var chk1 = document.getElementById("chk1");
-            var chk2 = document.getElementById("chk2");
-            var chk3 = document.getElementById("chk3");
-            var chk4 = document.getElementById("chk4");
-            var chk5 = document.getElementById("chk5");
-
-            if (chk1.checked) {
-                chk2.checked = true;
-                chk3.checked = true;
-                chk4.checked = true;
-                chk5.checked = true;
-                box.value = chk1.value;
+    function checkAll() {  
+    
+        var inputs = document.querySelectorAll('.chk');   
+        for (var i = 0; i < inputs.length; i++) {  
+            if(inputs[0].checked){
+                inputs[i].checked = true;  
+                box.value = inputs[0].value;
             }
-            else{
-                chk2.checked = false;
-                chk3.checked = false;
-                chk4.checked = false;
-                chk5.checked = false;
+            else{ 
+                inputs[i].checked = false;  
                 box.value = "";
-
             }
+        }   
+    }  
 
-            
+    function checkChange(){
+
+        var chk1 = document.getElementById("chk1");
+        var chk2 = document.getElementById("chk2");
+        var chk3 = document.getElementById("chk3");
+        var chk4 = document.getElementById("chk4");
+        var chk5 = document.getElementById("chk5");
+
+        if (chk2.checked && chk3.checked && chk4.checked && chk5.checked) {
+            chk1.checked = true;
+            box.value = chk1.value;
         }
+        else{
+            chk1.checked = false;
+            box.value = "";
+        }
+    
+}
 
     </script>
     
