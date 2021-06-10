@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #progress{
+            width: 100%;
+            background-color: #000000;
+        }
+        #progressbar{
+            width: 1%;
+            height: 25px;
+            background-color: #04AA6d;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>ProgressBar</h1>
+
+    <div id="progress">
+        <div id="progressbar"></div>
+    </div>
+
+    <br>
+
+    <button onclick="move()">Click</button>
+    
+
+    <script>
+        var i = 0;
+
+        function move(){
+            if(i==0){
+                i=1;
+                var el = document.getElementById("progressbar");
+                var width = 1;
+                var id = setInterval(frame, 100);
+
+                function frame(){
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i=0;
+                    }else{
+                        width++;
+                        el.style.width = width + "%";
+                    }
+                }
+            }
+        }
+    </script>
+
+    
+</body>
+</html>

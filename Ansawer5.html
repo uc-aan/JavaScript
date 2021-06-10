@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="studentResult();">Show Result</button>
+    <div id="stdResult"></div>
+
+    <script>
+
+            var sbj1 = Number(prompt("Enter the marks of sub. 1"));
+            var sbj2 = Number(prompt("Enter the marks of sub. 2"));
+            var sbj3 = Number(prompt("Enter the marks of sub. 3"));
+            var sbj4 = Number(prompt("Enter the marks of sub. 4"));
+            var sbj5 = Number(prompt("Enter the marks of sub. 5"));
+
+            var output = document.getElementById("stdResult");
+            var grade = '';
+    
+            function studentResult() {
+                let total = sbj1 + sbj2 + sbj3 + sbj4 + sbj5;
+                let avg = total / 5;
+                
+
+                if(avg >= 80){
+                    grade = "A+";
+                }
+                else if (avg >= 60 || avg < 80) {
+                    grade = "A";
+                }
+                else if (avg >= 45 || avg < 60) {
+                    grade = "B";
+                }
+                else if (avg >= 33 || avg < 45) {
+                    grade = "C";
+                }
+                else if ( avg < 33 ) {
+                    grade = "F";
+                }
+
+                output.innerHTML = `
+                    Total of student's marks is: ${total}, 
+                    Percentage of student is: ${avg}, 
+                    Grade is: ${grade}
+                    `;
+            }
+
+    </script>
+    
+</body>
+</html>

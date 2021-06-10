@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button onclick="tArea();">Click Me</button>
+    <p></p>
+    <script>
+        var height = Number(prompt("Enter triangle Height"));
+        var base = Number(prompt("Enter triangle Base"));
+        var output = document.querySelector('p');
+
+        function tArea() {
+            let result = 1/2 * (height * base);
+            output.innerHTML = `Area of Triangle is: ${result}`;
+        }
+    </script>
+    
+</body>
+</html>

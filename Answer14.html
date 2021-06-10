@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        Tennis: <input type="checkbox" onchange="chkBoxVal();" value="Tennis" name="chk" id="chk1">
+        FootBall: <input type="checkbox" name="chk" id="chk2" value="FootBall">
+        ShotPut: <input type="checkbox" name="chk" id="chk3" value="ShotPut">
+        HighJump: <input type="checkbox" name="chk" id="chk4" value="HighJump">
+        Race: <input type="checkbox" name="chk" id="chk5" value="Race"><br />
+         <input type="text" id="txt" /> 
+
+    </form>
+
+    <script>
+
+        
+
+        function chkBoxVal() {
+            var box = document.getElementById("txt");
+
+            var chk1 = document.getElementById("chk1");
+            var chk2 = document.getElementById("chk2");
+            var chk3 = document.getElementById("chk3");
+            var chk4 = document.getElementById("chk4");
+            var chk5 = document.getElementById("chk5");
+
+            if (chk1.checked) {
+                chk2.checked = true;
+                chk3.checked = true;
+                chk4.checked = true;
+                chk5.checked = true;
+                box.value = chk1.value;
+            }
+            else{
+                chk2.checked = false;
+                chk3.checked = false;
+                chk4.checked = false;
+                chk5.checked = false;
+                box.value = "";
+
+            }
+
+            
+        }
+
+    </script>
+    
+</body>
+</html>

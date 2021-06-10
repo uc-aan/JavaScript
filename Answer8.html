@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="chkValid(); return false;">
+        Enter UserID:- <input type="text" id="uid"><br>
+        Enter Fname: - <input type="text" id="fname"><br>
+        Enter Lname: - <input type="text" id="lname"><br>
+        Enter Phone No.: - <input type="number" id="pnumber"><br>
+        Enter Email: - <input type="email" id="email"><br>
+        Enter Password:- <input type="password" id="pwd"><br>
+        Enter Credit Card No.: - <input type="number" id="crnumber"><br>
+
+        <input type="button" onclick="chkValid();" id="btn" value="SUBMIT">
+        <br>
+
+        <span id="ShowErro"></span>
+    </form>
+    <br>
+
+    
+
+    <script>
+
+        function chkValid() {
+            
+        var uid = document.getElementById("uid").value;
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var pnum = document.getElementById("pnumber").value;
+        var email = document.getElementById("email").value;
+        var pwd = document.getElementById("pwd").value;
+        var cnum = document.getElementById("crnumber").value;
+
+        var showMe = document.getElementById("ShowErro");
+
+            if (uid === '') {
+                showMe.innerHTML = 'Fill User ID';
+                return;
+            }
+            if (uid.length < 3 || uid.length >10) {
+                showMe.innerHTML = 'UserID should be 3 to 10 character';
+                return;
+            }
+
+            if (fname === '') {
+                showMe.innerHTML = 'Fill First Name';
+                return;
+            }
+            if (fname.length < 3 || fname.length > 15) {
+                showMe.innerHTML = 'first name should be 3 to 15 character';
+                return;
+            }
+
+            if (lname === '') {
+                showMe.innerHTML = 'Fill Last Name';
+                return;
+            }
+            if (lname.length < 3 || lname.length > 15) {
+                showMe.innerHTML = 'last name should be 3 to 15 character';
+                return;
+            }
+
+            if (pnum === '') {
+                showMe.innerHTML = 'Fill User Phone Number';
+                return;
+            }
+            if (pnum.length < 10 || pnum.length > 10) {
+                showMe.innerHTML = 'Phone Number should be 10 digits';
+                return;
+            }
+
+
+            if (email === '') {
+                showMe.innerHTML = 'Fill User Email';
+                return;
+                
+            }
+
+            if (pwd === '') {
+                showMe.innerHTML = 'Fill password';
+                return; 
+            }
+            if(pwd.length < 4 || pwd.length > 15) {
+                showMe.innerHTML = 'Password should be 4 to 15 character';
+                return; 
+            }
+            
+            if (cnum === '') {
+                showMe.innerHTML = 'Fill User Credit Card Number';
+                return;
+            }
+            if (cnum.length < 16 || cnum.length > 16) {
+                showMe.innerHTML = 'Credit Card Number Should be 16 Digits';
+                return;
+            }
+
+
+            showMe.innerHTML = 'successful';
+            
+        }
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button onclick="cylinderVolum();">Show Result</button>
+    <div id="cylinderResult"></div>
+
+    <script>
+
+            var height = Number(prompt("Enter the height of cylinder"));
+            var radius = Number(prompt("Enter the radius of cylinder"));
+
+            var output = document.getElementById("cylinderResult");
+
+            const PI = 3.1415;
+            function cylinderVolum() {
+                let result;
+                result = PI * (radius**2 * height);
+                output.innerHTML = `Volume of cylinder is: ${result.toFixed(4)}`;
+            }
+
+    </script>
+    
+</body>
+</html>
