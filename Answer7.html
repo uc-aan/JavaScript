@@ -8,14 +8,18 @@
 </head>
 <body>
 
-    <p>Hello, This is <b id="strong">JavaScript DOM</b> .... </p>
+    <p>Hello, This is <b id="strong">JavaScript DOM</b> .... <b>DOM</b> is the best part of <b>JavaScript</b>....</p>
     <button id="button" onclick="chText();">Click For HighLight</button>
     
 
     <script>
         
         function chText() {
-            document.getElementById("strong").style.color = "red";;
+            var hlight = document.getElementsByTagName('b');
+
+            for(let i = 0; i < hlight.length; i++){
+                hlight[i].style.color = "red";
+            }
         }
 
     </script>
